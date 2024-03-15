@@ -195,6 +195,9 @@ int main()
 {
     int size;
     int count = 0;
+    int mcount = 0;
+    int scount = 0;
+    int smcount = 0;
     cout << " Enter Employee count : ";
     cin >> size;
     Employee *eptr[size];
@@ -213,6 +216,7 @@ int main()
         cout << "4. Display Manager" << endl;
         cout << "5. Display Salesman" << endl;
         cout << "6. Display Sales Manager" << endl;
+        cout << "7. Display the count of all employees with respect to designation" << endl;
         cout << "Enter your choice - ";
         cin >> choice;
 
@@ -231,6 +235,7 @@ int main()
                 eptr[count] = new Manager();
                 eptr[count]->acceptdata();
                 count++;
+                mcount++;
             }
             else
             {
@@ -246,6 +251,7 @@ int main()
                 eptr[count] = new Salesman();
                 eptr[count]->acceptdata();
                 count++;
+                scount++;
             }
             else
             {
@@ -262,6 +268,7 @@ int main()
                 eptr[count] = new Sales_manager();
                 eptr[count]->acceptdata();
                 count++;
+                smcount++;
             }
             else
             {
@@ -308,6 +315,11 @@ int main()
             }
             break;
         }
+        case 7:
+            cout<<"The total number of managers are :- "<<mcount<<endl;
+            cout<<"The total number of Salesman are :- "<<scount<<endl;
+            cout<<"The total number of sales managers are :- "<<smcount<<endl;
+
         default:
 
             cout << "Invalid valid choice......." << endl;
